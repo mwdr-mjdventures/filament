@@ -403,6 +403,7 @@
                     {{ $content->with(['records' => $records]) }}
                 @else
                     <x-filament::grid
+                        :wire:key="$this->getId() . '.table.sorting.' . $this->tableSortColumn . '.' . $this->tableSortDirection"
                         :default="$contentGrid['default'] ?? 1"
                         :sm="$contentGrid['sm'] ?? null"
                         :md="$contentGrid['md'] ?? null"
